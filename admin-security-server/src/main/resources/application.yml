@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: admin-security-server
+  security:  # 配置登录名和密码
+    user:
+      name: HyJan
+      password: 123456
+  boot:  # 不显示 admin-security-server 的监控
+    admin:
+      discovery:
+        ignored-services: ${spring.application.name}
+server:
+  port: 9301
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8085/eureka/
